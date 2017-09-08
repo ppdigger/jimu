@@ -18,9 +18,11 @@ export default {
 </script>
 
 <style>
+
 html,body{
   padding: 0;
   margin: 0;
+  background: #f4f4f4;
 }
 html{
   font-size: 625%;
@@ -33,14 +35,18 @@ body,html,h1,h2,h3,h4,h5,h6,p,ul,dl,div,li,dt,dd,a,img,i,span,blockquote,em {
   margin: 0;
   padding: 0;
 }
+img{
+  width: 100%;
+}
 .anim{
-  transition: 0.2 s ease;
+  transition: 0.2s ease;
   -moz-transition: 0.2s ease; /* Firefox 4 */
   -webkit-transition: 0.2s ease; /* Safari 和 Chrome */
   -o-transition: 0.2s ease; /* Opera */
 }
 #app {
   width: 100%;
+  padding-bottom: 57px;
 }
 .clearfix::after {
   display: block;
@@ -56,4 +62,22 @@ li{
 .component-fade-enter, .component-fade-leave-to{
   opacity: 0;
 }
+.no-linefeed {
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.clearfix::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+
 </style>

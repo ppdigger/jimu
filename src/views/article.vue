@@ -1,5 +1,17 @@
 <template lang="html">
-  <p>article</p>
+  <div class="">
+    <item
+      v-for="item in articleList"
+      :key="item.id"
+      :title="item.title"
+      :blockquote="item.blockquote"
+      :createtime="item.createTime"
+      :picture="item.picture"
+    ></item>
+    <div class="div-next" v-if="articleNextButton">
+      <a class="btn btn-default" @click="next">NEXT</a>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -17,7 +29,8 @@ export default {
     }),
     methods:{
       ...mapActions({
-        getArticleList: 'getArticleList'
+        getArticleList: 'getArticleList',
+        next: 'articleNext'
       })
     },
     created () {
@@ -27,4 +40,8 @@ export default {
 </script>
 
 <style lang="less">
+.clamp(@num:2){
+    overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: @num;-webkit-box-orient: vertical;
+}
+
 </style>

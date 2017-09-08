@@ -4,7 +4,7 @@ import article from '../api/article'
 
 const state = {
   articlePage: 0,
-  articleLimit: 5,
+  articleLimit: 6,
   articleNextButton: true,
   articleListUrl: types.URL + '/api/articleList',
   articleList: [],
@@ -25,8 +25,8 @@ const actions = {
         limit: state.articleLimit
       }, articleList => {
         if(articleList.length != 0){
-        commit(types.ARTICLE_GET_SUCCESS, { goodsList })
-          if(goodsList.length < state.goodsListLimit){
+        commit(types.ARTICLE_GET_SUCCESS, { articleList })
+          if(articleList.length < state.articleLimit){
             commit(types.ARTICLE_NEXT_BUTTON_CLOSE)
           }
         } else{
@@ -34,6 +34,22 @@ const actions = {
         }
       })
     }
+  },
+  articleNext ({ commit }) {
+    commit(types.ARTICLE_NEXT)
+    article.getArticleList(state.articleListUrl, {
+      page: state.articlePage,
+      limit: state.articleLimit
+    }, articleList => {
+      if(articleList.length != 0){
+      commit(types.ARTICLE_GET_SUCCESS, { articleList })
+        if(articleList.length < state.articleLimit){
+          commit(types.ARTICLE_NEXT_BUTTON_CLOSE)
+        }
+      } else{
+        commit(types.ARTICLE_NEXT_BUTTON_CLOSE)
+      }
+    })
   }
 }
 
