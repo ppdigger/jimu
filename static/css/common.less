@@ -2,3 +2,18 @@
 .clamp(@num:2){
     overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: @num;-webkit-box-orient: vertical;
 }
+.radius (@r:0) {
+    border-radius:@r;
+    -webkit-border-radius:@r;
+    -moz-border-radius:@r;
+    -ms-border-radius:@r;
+    -o-border-radius:@r;
+}
+//效果过渡效果
+.transition (@time:0,@style:ease-in) {
+    transition:@time @style;
+    -webkit-transition:@time @style;
+    -moz-transition:@time @style;
+    -ms-transition:@time @style;
+    -o-transition:@time @style;
+}

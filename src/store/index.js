@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import * as actions from './actions'
 import * as getters from './getters'
 import article from './modules/article'
+import user from './modules/user'
 // import goodsList from './modules/goodsList'
 // import photosList from './modules/photosList'
 // import blogsList from './modules/blogsList'
@@ -14,7 +15,8 @@ export default new Vuex.Store({
   actions,
   getters,
   modules: {
-    article
+    article,
+    user
     // goodsList,
     // photosList,
     // blogsList

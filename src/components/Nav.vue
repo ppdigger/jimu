@@ -26,59 +26,71 @@
           <i class="fa fa-address-card-o"></i>
         </router-link>
       </li>
-      <span class="line anim" :style="{ left: left + '%' }"></span>
     </ul>
   </div>
 </template>
 
 <script>
+  import { mapGetters, mapActions } from 'vuex'
   export default {
     data: function(){
       return {
-          index: 1,
-          left: 0
+        index: 1
       }
     },
+    computed: mapGetters({
+      index: 1
+    }),
     methods: {
       selected: function(index){
         this.index = index
-        this.left = (index - 1)* 20
       }
     }
   }
 </script>
 
 <style lang="less" scoped>
+@import '../../static/css/common.less';
   #nav{
     position: fixed;
     bottom: 0;
     width: 100%;
+    z-index: 999;
   }
   .nav{
-    position: relative;
     width:100%;
     background: #e62117;
     li{
+      position: relative;
       float: left;
       width: 20%;
       text-align: center;
       font-size: 0.24rem;
-      line-height: 2.4em;
+      line-height: 2em;
       a{
         color: #5c0d09;
       }
-      &.active a{
-        color: #fff;
+      &.active{
+        a{
+          color: #fff;
+        }
+        &:after{
+          opacity: 1;
+        }
+      }
+      &:after{
+        position: absolute;
+        content: '';
+        width: 100%;
+        left: 0;
+        top: 0;
+        display: block;
+        height: 3px;
+        background: #fff;
+        opacity: 0;
       }
     }
     .line{
-      position: absolute;
-      width: 20%;
-      left: 0;
-      top: 0;
-      display: block;
-      height: 3px;
-      background: #fff;
     }
   }
 </style>

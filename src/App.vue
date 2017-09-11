@@ -25,11 +25,12 @@ html,body{
   background: #f4f4f4;
 }
 html{
-  font-size: 625%;
+  font-size: 100px;
 }
 body{
   overflow-x: hidden;
   font-size: 0.14rem;
+  font-family: 'Microsoft YaHei';
 }
 body,html,h1,h2,h3,h4,h5,h6,p,ul,dl,div,li,dt,dd,a,img,i,span,blockquote,em {
   margin: 0;
@@ -46,7 +47,7 @@ img{
 }
 #app {
   width: 100%;
-  padding-bottom: 57px;
+  padding-bottom: 48px;
 }
 .clearfix::after {
   display: block;

@@ -7,6 +7,8 @@
       :blockquote="item.blockquote"
       :createtime="item.createTime"
       :picture="item.picture"
+      :avatar="item.author.avatar"
+      :name="item.author.name"
     ></item>
     <div class="div-next" v-if="articleNextButton">
       <a class="btn btn-default" @click="next">NEXT</a>
@@ -39,9 +41,11 @@ export default {
 }
 </script>
 
-<style lang="less">
-.clamp(@num:2){
-    overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: @num;-webkit-box-orient: vertical;
+<style lang="less" scoped>
+.div-next{
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  line-height: 2.4em;
 }
-
 </style>

@@ -15,6 +15,11 @@ Vue.config.productionTip = false
 
 Vue.axios = axios
 
+router.beforeEach((to, from, next) => {
+  let toPath = to.path
+  console.log(toPath);
+  next()
+})
 
 /* eslint-disable no-new */
 new Vue({
