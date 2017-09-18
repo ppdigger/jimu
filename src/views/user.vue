@@ -26,8 +26,13 @@ export default {
 <style lang="less" scoped>
   .box{
     display: table;
-    width: 100%;
     height: 90vh;
+  }
+</style>
+<style lang="less">
+@import '../../static/css/common.less';
+  .box{
+    width: 100%;
     .inner{
       vertical-align: middle;
       display: table-cell;
@@ -35,6 +40,27 @@ export default {
         width: 24%;
         margin: 0 auto;
       }
+    }
+    .sign-in,
+    .sign-up{
+      display: table-cell;
+      vertical-align: middle;
+      padding: 0 10%;
+    }
+    input{
+      padding: 0 1em;
+      width: 100%;
+      font-size: 0.14rem;
+      line-height: 2.2em;
+      background: #eae6e1;
+      margin: 0.06rem 0;
+      .radius(4px);
+    }
+    input[type="submit"],
+    button{
+      margin-top: 0.16rem;
+      color: #fff;
+      background: #e62117;
     }
   }
 </style>

@@ -18,11 +18,13 @@ export default {
 </script>
 
 <style>
-
+*{
+  box-sizing: border-box;
+}
 html,body{
   padding: 0;
   margin: 0;
-  background: #f4f4f4;
+  background: #f7f5f2;
 }
 html{
   font-size: 100px;
@@ -38,6 +40,13 @@ body,html,h1,h2,h3,h4,h5,h6,p,ul,dl,div,li,dt,dd,a,img,i,span,blockquote,em {
 }
 img{
   width: 100%;
+}
+input{
+  border: none;
+  outline: none;
+}
+input::-webkit-input-placeholder{
+  color: #acacac;
 }
 .anim{
   transition: 0.2s ease;

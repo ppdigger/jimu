@@ -5,6 +5,7 @@ import Recommend from '@/views/recommend'
 import Photo from '@/views/photo'
 import Article from '@/views/article'
 import User from '@/views/user'
+import Usermain from '@/views/usermain'
 
 Vue.use(Router)
 
@@ -30,6 +31,10 @@ export default new Router({
     {
       path: '/user',
       component: User
+    },
+    {
+      path: '/usermain',
+      component: Usermain
     }
   ]
 })

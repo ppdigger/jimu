@@ -45,7 +45,7 @@ export default {
 .div-next{
   width: 100%;
   text-align: center;
-  font-size: 14px;
+  font-size: 0.14rem;
   line-height: 2.4em;
 }
 </style>
