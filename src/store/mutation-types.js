@@ -7,3 +7,4 @@ export const ARTICLE_NEXT_BUTTON_CLOSE = 'ARTICLE_NEXT_BUTTON_CLOSE'
 //user
 export const SIGN_TOGGLE = 'SIGN_TOGGLE'
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
+export const SIGNOUT = 'SIGNOUT'

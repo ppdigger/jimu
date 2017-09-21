@@ -44,10 +44,12 @@ const actions = {
         let name = response.data.name
         let id = response.data.id
         commit(types.LOGIN_SUCCESS, { token, name, id })
-        router.push('usermain')
-        window.localStorage.setItem('mujitoken', token)
       }
     })
+  },
+  signOut({ commit }){
+    commit(types.SIGNOUT)
+    router.push('user')
   }
 }
 
@@ -59,6 +61,11 @@ const mutations = {
     state.token = token
     state.name = name
     state.id = id
+    window.localStorage.setItem('mujitoken', token)
+  },
+  [types.SIGNOUT] (state) {
+    state.token = null
+    window.localStorage.removeItem('mujitoken')
   }
 }
 

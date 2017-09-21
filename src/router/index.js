@@ -6,8 +6,12 @@ import Photo from '@/views/photo'
 import Article from '@/views/article'
 import User from '@/views/user'
 import Usermain from '@/views/usermain'
+import store from '@/store/index'
 
 Vue.use(Router)
+
+
+
 
 export default new Router({
   mode: 'history',
@@ -26,7 +30,10 @@ export default new Router({
     },
     {
       path: '/article',
-      component: Article
+      component: Article,
+      meta: {
+          requireAuth: true,  // 添加该字段，表示进入这个路由是需要登录的
+      }
     },
     {
       path: '/user',
@@ -34,7 +41,10 @@ export default new Router({
     },
     {
       path: '/usermain',
-      component: Usermain
+      component: Usermain,
+      meta: {
+          requireAuth: true,  // 添加该字段，表示进入这个路由是需要登录的
+      }
     }
   ]
 })

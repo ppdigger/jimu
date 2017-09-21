@@ -22,7 +22,7 @@
         </router-link>
       </li>
       <li :class="{'active' : index == 5}" @click="selected(5)">
-        <router-link :to="{ path: '/user' }">
+        <router-link :to="{ path: '/usermain' }">
           <i class="fa fa-address-card-o"></i>
         </router-link>
       </li>
