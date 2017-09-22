@@ -42,7 +42,7 @@ router.beforeEach((to, from, next) => {
 Vue.axios.interceptors.request.use(
     config => {
         if (store.getters.token) {
-            config.headers.Authorization = `token ${store.getters.token}`;
+            config.headers.Authorization = `${store.getters.token}`;
         }
         return config;
     },
